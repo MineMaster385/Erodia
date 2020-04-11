@@ -20,7 +20,6 @@
       "quotes": ["warn", "double"],
       "indent": ["error", 2],
       "curly": "off"
-
     }
   }
 }
