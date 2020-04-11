@@ -1,0 +1,12 @@
+{
+  "name": "Erodia",
+  "version": "0.1.0",
+  "description": "Projet bot discord",
+  "main": "main.js",
+  "repository": "https://github.com/MineMaster385/Erodia-alpha.git",
+  "author": "MineMaster385 <alexa24683931@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.1.1"
+  }
+}
