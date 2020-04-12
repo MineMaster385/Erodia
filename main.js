@@ -52,13 +52,27 @@ client.on("message", msg => {
 
 // message de bienvenue
 client.on("guildMemberAdd", member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === "test");
-  channel.send(`Bienvenue ${member}, nous somme maintenant ${member.guild.memberCount}`);
+  const channel = member.guild.channels.cache.find(ch => ch.name === "test");// si tu change le nom du channel met le nouveau nom ici
+  if (!channel) return;
+  const embed = new Discord.MessageEmbed()
+	  .setColor("#FF0000")
+    .setTitle(`**Bienvenue ${member}**`)// ici c'est pour ce qu'il y a en haut
+    .setDescription(`Bienvenue ${member.user.username} sur **${member.guild.name}**.\n Tu est le ${member.guild.memberCount}ème utilisateur a rejoindre notre Discord !`)// pour modifier le message c'est ici
+    .setTimestamp()
+    .setFooter(`${client.user.username}`, `${client.user.displayAvatarURL()}`);
+  channel.send(embed);
 });
 
 // message d'aurevoir
 client.on("guildMemberRemove", member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === "test");
-  channel.send(`${member.user.username} nous à quitté, nous ne somme plus que ${member.guild.memberCount}`);
+  const channel = member.guild.channels.cache.find(ch => ch.name === "test");// si tu change le nom du channel met le nouveau nom ici
+  if (!channel) return;
+  const embed = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle(`**Aurevoir ${member.user.username}**`)// ici c'est pour ce qu'il y a en haut
+    .setDescription(`${member.user.username} nous a quitté :cry:.\n nous ne somme plus que ${member.guild.memberCount} !`)// pour modifier le message c'est ici
+    .setTimestamp()
+    .setFooter(`${client.user.username}`, `${client.user.displayAvatarURL()}`);
+  channel.send(embed);
 });
 
