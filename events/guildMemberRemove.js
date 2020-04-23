@@ -1,12 +1,12 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = (client, member) => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === "test");
+  const channel = member.guild.channels.cache.find(ch => ch.name === "départ");
   if (!channel) return;
   const embed = new MessageEmbed()
     .setColor("#FF0000")
-    .setTitle(`**Bienvenue ${member}**`)
-    .setDescription(`Bienvenue ${member.user.username} sur **${member.guild.name}**.\n Tu est le ${member.guild.memberCount}ème utilisateur a rejoindre notre Discord !`)
+    .setTitle(`**Aurevoir ${member.user.username}**`)
+    .setDescription(`sniff :cry:, ${member.user.username} nous a quitté\n nous ne somme plus que ${member.guild.memberCount} !`)
     .setTimestamp()
     .setFooter(`${client.user.username}`, `${client.user.displayAvatarURL()}`);
   channel.send(embed);
