@@ -1,5 +1,5 @@
 {
-  "name": "Erodia",
+  "name": "erodia",
   "version": "0.1.0",
   "description": "Projet bot discord",
   "main": "main.js",
@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "^12.1.1",
+    "mongoose": "^5.9.10",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
@@ -29,7 +30,10 @@
         "error",
         2
       ],
-      "curly": "off"
+      "curly": "off",
+      "no-trailing-spaces": "off",
+      "prefer-template": "off",
+      "no-eval": "off"
     }
   }
 }

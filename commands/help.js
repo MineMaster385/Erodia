@@ -7,11 +7,12 @@ module.exports = (client, message) => {
     .setTitle("Menu d'aide")// titre ---- on met '\' devant le ' pour qu'il ne le compte aps en apostrophe fermante
     .setDescription("Voici le menu d'aide de toutes les commandes du bot") // une desc
     .addFields(// on créé plein de fields
-      { name: "**Prefix**", value: "%" },
-      { name: "**Modération**", value: "`%ban` Permet de bannir un utilisateur\n`%kick` Permet de kick un utilisateur" }, // on met '\n' pour aller à la ligne
-      { name: "**Utilitaire**", value: "`%ping` Permet de tester le ping\n`%say` Pour faire dire quelque chose au bot\n`%pdp` Permet d'afficher la photo de profil d'un utilisateur\n`%invite` Permet d'afficher le lien d'invitation du bot\n`%sinfo` Permet de voir certaine information relative au serveur" }
+      { name: "**Prefix**", value: "`%`" },
+      { name: "**Modération**", value: "`%ban` permet de bannir un utilisateur\n`%kick` permet de kick un utilisateur" }, // on met '\n' pour aller à la ligne
+      { name: "**Utilitaire**", value: "`%ping` permet de tester le ping\n`%say` pour faire dire quelque chose au bot\n`%pdp` permet d'afficher la photo de profil d'un utilisateur\n`%invite` permet d'afficher le lien d'invitation du bot\n`%sinfo` permet de voir certaine information relative au serveur" },
+      { name: "**Fun**", value: "`%cat` affiche une photo de chat\n`%dog` affiche une photo de chien\n`%fox` affiche une photo de renard" }
     )
     .setTimestamp()
-    .setFooter(`Demandé par ${message.author.username}`, `${message.author.displayAvatarURL()}`); // ajoute un footer
+    .setFooter(`Demandé par ${message.author.username}`, `${message.author.displayAvatarURL()}`);
   message.channel.send(embed);
 };

@@ -11,6 +11,7 @@ module.exports = async (client, message) => {
   const embed = new MessageEmbed()
     .setColor("#00ff82")
     .setImage(cat)
+    .setTimestamp()
     .setFooter("Powered by 'http://aws.random.cat/meow'");
   message.channel.send(embed);
 };
