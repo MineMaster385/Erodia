@@ -24,6 +24,7 @@ client.commands.set("close", require("./commands/tclose.js"));
 client.commands.set("rname", require("./commands/rename.js"));
 client.commands.set("shelp", require("./commands/shelp.js"));
 client.commands.set("del", require("./commands/supr.js"));
+client.commands.set("poll", require("./commands/poll.js"));
 
 client.on("ready", () => require("./events/ready.js")(client));
 client.on("message", message => require("./events/message.js")(client, message));

@@ -1,7 +1,13 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = (client, message) => {
   message.delete();
   const channel = message.guild.channels.cache.find(ch => ch.name === "【🎟】ticket-logs");
-  channel.send(`${message.member.user.username} a crée un ticket`);
+  const embed = new MessageEmbed()
+    .setColor("#ff0000")
+    .addField("**Ouverture de ticket**", `${message.member.user.username} a ouvert un ticket : ${message.member.user.username}-ticket`)
+    .setTimestamp();
+  channel.send(embed);
   if (!message.guild) return;
   message.guild.channels.create(`${message.member.user.username} ticket`, {
     permissionOverwrites: [
@@ -11,7 +17,7 @@ module.exports = (client, message) => {
       },
       {
         id: message.member.id,
-        allow: ["VIEW_CHANNEL", "MANAGE_CHANNELS"]
+        allow: ["VIEW_CHANNEL"]
       },
       {
         id: "690595142150914088",
