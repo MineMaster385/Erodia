@@ -12,7 +12,7 @@ module.exports = async (client, message, args) => {
   const msg = await message.channel.send(embed);
 
   await msg.react("✅");
-  await msg.react("✅");
+  await msg.react("❌");
 
   message.delete();
 };
