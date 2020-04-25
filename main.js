@@ -1,10 +1,8 @@
 const { Client, Collection } = require("discord.js");
 const { TOKEN, PREFIX } = require("./config");
-const client = new Client({ disableEveryone: true });
+const client = new Client();
 
 client.PREFIX = PREFIX;
-require("./util/functions")(client);
-client.mongoose = require("./util/mongoose.js");
 client.commands = new Collection();
 
 client.commands.set("say", require("./commands/say.js"));
@@ -21,14 +19,17 @@ client.commands.set("dog", require("./commands/dog.js"));
 client.commands.set("fox", require("./commands/fox.js"));
 client.commands.set("invite", require("./commands/invite.js"));
 client.commands.set("eval", require("./commands/eval.js"));
+client.commands.set("open", require("./commands/topen.js"));
+client.commands.set("close", require("./commands/tclose.js"));
+client.commands.set("rname", require("./commands/rename.js"));
+client.commands.set("shelp", require("./commands/shelp.js"));
+client.commands.set("del", require("./commands/supr.js"));
 
 client.on("ready", () => require("./events/ready.js")(client));
 client.on("message", message => require("./events/message.js")(client, message));
-client.on("guildMemberAdd", member => require("./events/guildMemberAdd.js")(client, member));
-client.on("guildMemberRemove", member => require("./events/guildMemberRemove.js")(client, member));
-client.on("guildCreate", guild => require("./events/guildCreate.js")(client, guild));
+// client.on("guildMemberAdd", member => require("./events/guildMemberAdd.js")(client, member));
+// client.on("guildMemberRemove", member => require("./events/guildMemberRemove.js")(client, member));
 
-client.mongoose.init();
 client.login(TOKEN);
 client.on("error", console.error);
 client.on("warn", console.warn);

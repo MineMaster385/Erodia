@@ -5,7 +5,7 @@ module.exports = (client, member) => {
   if (!channel) return;
   const embed = new MessageEmbed()
     .setColor("#FF0000")
-    .setTitle(`**Bienvenue ${member.user}**`)
+    .setTitle(`**Bienvenue ${member.user.username}**`)
     .setDescription(`Bienvenue ${member.user} sur **${member.guild.name}**.\n Tu est le ${member.guild.memberCount}ème utilisateur a rejoindre notre Discord !`)
     .setTimestamp()
     .setFooter(`${client.user.username}`, `${client.user.displayAvatarURL()}`);

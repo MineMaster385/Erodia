@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = (client, message) => {
+  if (!message.author.id === "530489758527389696") return undefined;
   if (!message.guild) return;
   const embed = new MessageEmbed()
     .setColor("#FF0000")
