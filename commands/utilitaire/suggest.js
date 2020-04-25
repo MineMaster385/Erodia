@@ -7,8 +7,8 @@ module.exports = async (client, message, args) => {
   if (!args) return;
   const embed = new MessageEmbed()
     .setColor("#FF0000")
-    .setTitle(`Suggestion de ${message.member}`)
-    .setDescription(`**${args.join(" ")}**\nSi la suggestion est ajouter un membre du staff le ferat savoir via l'emoji : ⭐`)
+    .setTitle(`Suggestion de ${message.member.user.username}`)
+    .setDescription(`**${args.join(" ")}**\nSi la suggestion est ajouté, un membre du staff le ferat savoir via l'emoji : ⭐`)
     .setTimestamp()
     .setFooter(`Sondage réalisé par ${message.author.username}`, `${message.author.displayAvatarURL()}`);
   const msg = await channel.send(embed);
