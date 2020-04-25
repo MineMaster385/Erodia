@@ -8,7 +8,7 @@ module.exports = async (client, message, args) => {
   const embed = new MessageEmbed()
     .setColor("#FF0000")
     .setTitle(`Suggestion de ${message.member}`)
-    .setDescription(`**${args.join(" ")}**\nSi la suggestion est ajouter on le ferat savoir via l'emoji : `)
+    .setDescription(`**${args.join(" ")}**\nSi la suggestion est ajouter on le ferat savoir via l'emoji : ⭐`)
     .setTimestamp()
     .setFooter(`Sondage réalisé par ${message.author.username}`, `${message.author.displayAvatarURL()}`);
   const msg = await channel.send(embed);
