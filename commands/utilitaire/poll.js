@@ -6,7 +6,7 @@ module.exports = async (client, message, args) => {
   if (!args) return;
   const embed = new MessageEmbed()
     .setColor("#FF0000")
-    .setTitle("C'est l'heure du sondage")
+    .setTitle("C'est l'heure du sondage !!")
     .setDescription(`${args.join(" ")}`)
     .setTimestamp()
     .setFooter(`Sondage réalisé par ${message.author.username}`, `${message.author.displayAvatarURL()}`);

@@ -26,10 +26,11 @@ client.commands.set("shelp", require("./commands/utilitaire/shelp.js"));
 client.commands.set("del", require("./commands/utilitaire/del.js"));
 client.commands.set("poll", require("./commands/utilitaire/poll.js"));
 client.commands.set("suggest", require("./commands/utilitaire/suggest.js"));
+client.commands.set("usinfo", require("./commands/modération/userinfo.js"));
 
 client.on("ready", () => require("./events/ready.js")(client));
 client.on("message", message => require("./events/message.js")(client, message));
-// client.on("guildMemberAdd", member => require("./events/guildMemberAdd.js")(client, member));
+client.on("guildMemberAdd", member => require("./events/guildMemberAdd.js")(client, member));
 // client.on("guildMemberRemove", member => require("./events/guildMemberRemove.js")(client, member));
 
 client.login(TOKEN);
